@@ -7,6 +7,7 @@ def print_out_current_page(page_number):
         print("yay")
     elif page_number == 1:
         print("nah")
+        print("Invalid page number?!")
 
 
 def get_integer_from_player():
@@ -30,6 +31,7 @@ def find_next_page_from_choice(from_page, choice_number):
     elif from_page == 1:
         if choice_number == 0:
             return 0
+    print("Invalid choice for this page!\nRepeating the page.")
     return from_page
 
 
