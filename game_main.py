@@ -8,13 +8,19 @@ def print_out_current_page(page_number):
     if page_number == 0:
 
         # Print out stuff on page 0
-        print("This is the contents of page 0.", "0) Go to page 1.")
+        print("=== Page zero ===\nStory?\n0) Go to Page 1.\n1) Skip to Page 2.")
 
     # Are we on page 1?
     elif page_number == 1:
 
         # Print out stuff on page 1
-        print("This would be text on page 1.", "0) Go to page 0.")
+        print("=== Page one ===\nMiddle?\n0) Go back to 0.\n1) On to 2.")
+
+    # Are we on page 2?
+    elif page_number == 2:
+
+        # Print out stuff on page 2
+        print("=== Page two ===\nEnd-ness?\n0) Start over on Page 0.")
 
 
 def get_integer_from_player():
@@ -57,11 +63,18 @@ def find_next_page_from_choice(from_page, choice_number):
     if from_page == 0:
         if choice_number == 0:
             return 1
+        elif choice_number == 1:
+            return 2
     elif from_page == 1:
         if choice_number == 0:
             return 0
-    else:
-        return from_page
+        elif choice_number == 1:
+            return 2
+    elif from_page == 2:
+        if choice_number == 0:
+            return 0
+    print("Invalid choice for this page!\nRepeating the page.")
+    return from_page
 
 
 def run_game():
