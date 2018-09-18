@@ -4,9 +4,12 @@
 def print_out_current_page(page_number):
     # TODO: Print to the console the text from that page. Include the choices like 1) xxx 2) xxx.
     if page_number == 0:
-        print("yay")
+        print("=== Page one ===\nStory?\n0) Go to Page 2.\n1) Skip to Page 3.")
     elif page_number == 1:
-        print("nah")
+        print("=== Page two ===\nMiddle?\n0) Go back to 1.\n1) On to 3.")
+    elif page_number == 2:
+        print("=== Page three ===\nEnd-ness?\n0) Start over on Page 1.")
+    else:
         print("Invalid page number?!")
 
 
@@ -28,7 +31,14 @@ def find_next_page_from_choice(from_page, choice_number):
     if from_page == 0:
         if choice_number == 0:
             return 1
+        elif choice_number == 1:
+            return 2
     elif from_page == 1:
+        if choice_number == 0:
+            return 0
+        elif choice_number == 1:
+            return 2
+    elif from_page == 2:
         if choice_number == 0:
             return 0
     print("Invalid choice for this page!\nRepeating the page.")
