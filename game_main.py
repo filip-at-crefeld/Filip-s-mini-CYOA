@@ -30,8 +30,7 @@ def find_next_page_from_choice(from_page, choice_number):
     elif from_page == 1:
         if choice_number == 0:
             return 0
-    else:
-        return from_page
+    return from_page
 
 
 def run_game():
