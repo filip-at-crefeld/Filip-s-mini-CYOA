@@ -48,6 +48,12 @@ def get_integer_from_player():
 def find_next_page_from_choice(from_page, choice_number):
     # TODO: The magic stuff.
     # TODO: Return the page number of the page you get taken to by that choice.
+
+    # This method is made up of two layers of if-statements.
+    # Outer layer: identify which page we're making choices on.
+    # Inner layer: identify which numbered choice was submitted.
+    # Success? Then return the new page number.
+    # Fail?    Then return the original page number. (So don't change things.)
     if from_page == 0:
         if choice_number == 0:
             return 1
