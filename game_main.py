@@ -1,5 +1,7 @@
 """Filip's version of a basic CYOA"""
 
+import random
+
 
 def print_out_current_page(page_number):
     # TODO: Print to the console the text from that page. Include the choices like 1) xxx 2) xxx.
@@ -77,6 +79,15 @@ def find_next_page_from_choice(from_page, choice_number):
     elif from_page == 2:
         if choice_number == 0:
             return 0
+
+
+    elif from_page == 3:
+        if choice_number == 0:
+            result = random.randint(0, 1)
+            if result == 0:
+                print("You won!")
+            else:
+                print("You lost")
 
 
     print("Invalid choice for this page!\nRepeating the page.")
