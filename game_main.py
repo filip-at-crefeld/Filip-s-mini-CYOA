@@ -65,14 +65,20 @@ def find_next_page_from_choice(from_page, choice_number):
             return 1
         elif choice_number == 1:
             return 2
+
+
     elif from_page == 1:
         if choice_number == 0:
             return 0
         elif choice_number == 1:
             return 2
+
+
     elif from_page == 2:
         if choice_number == 0:
             return 0
+
+
     print("Invalid choice for this page!\nRepeating the page.")
     return from_page
 
